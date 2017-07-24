@@ -11,6 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::group(['domain' => env('BOSS_DOMAIN'), 'namespace' => 'Admin'], function () {
+    //Route::get('/', 'DashboardController@welcome');
 });
