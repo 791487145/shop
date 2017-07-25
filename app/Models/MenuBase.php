@@ -29,6 +29,9 @@ class MenuBase extends Model
 {
     protected $table = 'menu_base';
 
+    const StateDel = -1;
+    const StateNormal = 1;
+
     public $timestamps = false;
 
     protected $fillable = [

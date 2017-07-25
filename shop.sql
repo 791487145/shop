@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50554
 File Encoding         : 65001
 
-Date: 2017-07-24 21:32:46
+Date: 2017-07-25 22:02:33
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -29,11 +29,15 @@ CREATE TABLE `menu_base` (
   `display_order` int(11) NOT NULL,
   `state` tinyint(4) NOT NULL DEFAULT '1' COMMENT '-1：删除；1：正常',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of menu_base
 -- ----------------------------
+INSERT INTO `menu_base` VALUES ('1', '0', '&#xe62d;', '', '用户管理', '', '10', '1');
+INSERT INTO `menu_base` VALUES ('2', '1', '', 'user/menu/list', '菜单管理', '', '11', '1');
+INSERT INTO `menu_base` VALUES ('4', '1', '', '', '权限管理', '功能', '12', '1');
+INSERT INTO `menu_base` VALUES ('5', '1', '', '', '角色管理', '角色', '13', '1');
 
 -- ----------------------------
 -- Table structure for `menu_power`
