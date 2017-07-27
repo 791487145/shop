@@ -41,7 +41,15 @@ class UserController extends BaseController
 
     public function menuUpdate(Request $request,$id)
     {
-
+        if($request->isMethod('post')){
+            $data = $request->all();
+            $ret = MenuBase::whereId($id)->update($data);
+            $result = self::resPonse($ret);
+            return response()->json($result);
+        }
+        $Menu = MenuBase::whereId($id)->first();
+        $MenuBases = MenuBase::whereParentId(self::zero)->whereState(MenuBase::StateNormal)->get();
+        return view('boss.user.user_menu_add',compact('MenuBases','Menu'));
     }
 
 }

@@ -19,4 +19,5 @@ Route::group(['domain' => env('BOSS_DOMAIN'), 'namespace' => 'Admin'], function 
     Route::get('/user/menu/add', 'UserController@menuAdd');
     Route::post('/user/menu/add', 'UserController@menuAdd');
     Route::get('/user/menu/{id}/update', 'UserController@menuUpdate');
+    Route::post('/user/menu/{id}/update', 'UserController@menuUpdate');
 });
